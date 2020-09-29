@@ -18,31 +18,32 @@ public class Test2 {
 			name[2] = "Ralf";
 			name[3] = "Karl";
 			name[4] = "Frieda";
-			
+		// arrays für Namen und Alter werden erstellt
 			
 			int sum = 0, Average = 0;			
 			boolean erwachsen = false;
-			
+		// Variablen für Alterssumme Altersdurchschnitt und erwachsen Status werden festgelegt
 			for(int i =0;i<=4;i++) {
+		// eine for Schleife welche die einzelnen Arrays durchgeht und diese überprüft
 			if (alter[i]>=18) {
 				erwachsen = true;
 			}else {
 				erwachsen = false;
 			}
-		
+		// es wird ein alterscheck durchgeführt und festgelegt ob die Person erwachsen ist oder nicht
 			System.out.println( "Hallo mein Name ist "+name[i]);
 			System.out.println( "Ich bin " +alter[i]+ " Jahre alt");
 			if(erwachsen==true) {
 				System.out.println("ich bin erwachsen");
 			}else {
-				System.out.println("ich bin noch minderj�hrig");
+				System.out.println("ich bin noch minderjährig");
 			}
+			//der Name das Alter der status erwachsen oder nicht werden ausgegeben
 			System.out.println();
 			sum = sum+alter[i];
 			}
 			Average = sum / 5;
 			System.out.println("Durchschnittsalter liegt bei "+Average);
+			// die einzelnen alterswerte werden zusammengerechnet und daraus wird ein Average gezogen
 		}
-			
-		
-}
+	}
