@@ -4,33 +4,32 @@ public class Brotcrunsher {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	
 		Scanner s = new Scanner(System.in);
 		int Alter[] = new int[3];
 		String[] Name = new String[3];
 		String[] Vorname = new String[3];
-		String Start;
 		int sum=0, avg = 0;
+		int Anzahl_Datensaetze;
 		
 		System.out.println("Guten Tag dies ist Ihr Assistent zum anlegen von neuen Benutzern");
 		System.out.println("Bitte legen Sie 3 Neue Benutzer an");
 		System.out.println("-------------------------------------------------------------------");
 		System.out.println("");
-		System.out.println("Type Start to begin");
-		Start = s.next();
+		System.out.println("Wie viele Datens√§tze sollen angelegt werden?");
+		Anzahl_Datensaetze = s.nextInt();
 		System.out.println("");
 		
-		for(int x=0;x<=2;x++) {
+		for(int x=0;x<Anzahl_Datensaetze;x++) {
 			int z = x+1;				
-			System.out.println("Vorname f¸r "+z+". Benutzer");
+			System.out.println("Vorname f√ºr "+z+". Benutzer");
 			Vorname[x] = s.next();
 			System.out.println("");
 			
-			System.out.println("Nachname f¸r "+z+". Benutzer");
+			System.out.println("Nachname f√ºr "+z+". Benutzer");
 			Name[x] = s.next();
 			System.out.println("");
 			
-			System.out.println("Alter f¸r "+z+". Benutzer");
+			System.out.println("Alter f√ºr "+z+". Benutzer");
 			Alter[x] = s.nextInt();
 			System.out.println("");
 		
@@ -39,23 +38,20 @@ public class Brotcrunsher {
 			System.out.println("");
 			
 			sum = sum+Alter[x];
-		}
-		
+		}		
 		System.out.println("Zusammenfassung Benuter:");
 		System.out.println("-------------------------------------------------------------------");
 		
-		for(int z=0; z<=2; z++) {
+		for(int z=0; z<Anzahl_Datensaetze; z++) {
 			String erw;
 			if(Alter[z]>=18) {
-				erw = "-vollj‰hrig-";
+				erw = "-vollj√§hrig-";
 				}else {
-				erw = "-minderj‰hrig-";
+				erw = "-minderj√§hrig-";
 			}
 			System.out.println(Vorname[z]+" "+Name[z]+ " "+Alter[z]+" "+erw);
 		}
-		
-		avg = sum / 3;
-		
+				avg = sum / 3;		
 		System.out.println("");
 		System.out.println("Durchschnittsalter: "+avg);
 		System.out.println("-------------------------------------------------------------------");
