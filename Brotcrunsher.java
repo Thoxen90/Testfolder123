@@ -70,9 +70,11 @@ public class Brotcrunsher {
 					break;
 					case "Abi": Eignung = true;
 					break;
+					case "Studium": Eignung = true;
+					break;
 					default: Eignung = false;					
 			}
-			if(Eignung == true && erw == "-volljährig") {
+			if(Eignung == true && erw == "-volljährig-") {
 				Eig = "Ist für den Job geeignet";
 			} else {
 				Eig = "Ist nicht für den Job geeignet";
