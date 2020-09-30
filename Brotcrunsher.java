@@ -56,17 +56,17 @@ public class Brotcrunsher {
 				erw = "-minderjährig-";
 			}
 			switch (Schulabschluss[z]) {
-					case "Mittlere Reife": Eignung = false;
+					case "MittlereReife": Eignung = false;
 					break;
-					case "Fachhochschul Reife": Eignung = true;
+					case "FachhochschulReife": Eignung = true;
 					break;
 					case "Hauptschulabschluss": Eignung = false;
 					break;
 					case "Fachabitur": Eignung = true;
 					break;
-					case "Fachgebundene Hochschulreife": Eignung = true;
+					case "FachgebundeneHochschulreife": Eignung = true;
 					break;
-					case "Fachoberschul Reife": Eignung = true;
+					case "FachoberschulReife": Eignung = true;
 					break;
 					case "Abi": Eignung = true;
 					break;
@@ -79,7 +79,7 @@ public class Brotcrunsher {
 			} else {
 				Eig = "Ist nicht für den Job geeignet";
 			}
-			System.out.println(Vorname[z]+" "+Name[z]+ " "+Alter[z]+" "+erw+" "+Eig);
+			System.out.println(Vorname[z]+" "+Name[z]+ " "+Alter[z]+" "+erw+" "+Schulabschluss[z]+" "+Eig);
 		}
 				avg = sum / Anzahl_Datensaetze;		
 		System.out.println("");
