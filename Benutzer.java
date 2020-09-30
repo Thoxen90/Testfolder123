@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class Brotcrunsher {
+public class Benutzer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner s = new Scanner(System.in);
-		//es wird eine Scanner Methode initialisier um Benutzer Eingaben abzufragen
+		//es wird eine Scanner Methode initialisiert um Benutzer Eingaben abzufragen
 		int Anzahl_Datensaetze;
 		
 		System.out.println("Guten Tag dies ist Ihr Assistent zum anlegen von neuen Benutzern");
@@ -47,12 +47,12 @@ public class Brotcrunsher {
 			Schulabschluss[x] = s.next();
 			// String Eingabe Schulabschluss
 			System.out.println("");
-			System.out.println(Vorname[x]+" "+Name[x]+" "+Alter[x]); //Ausgabe der eingegebenen werte und bestätigung der Eingabe
+			System.out.println(Vorname[x]+" "+Name[x]); //Ausgabe der eingegebenen Werte und bestätigung der Eingabe
 			System.out.println("Eingabe erfolgreich");
 			System.out.println("");
 			
 			sum = sum+Alter[x]; //aktuelles alter wird zu summe addiert
-		}		
+		}
 		System.out.println("Zusammenfassung Benuter:");
 		System.out.println("-------------------------------------------------------------------");
 		
@@ -79,10 +79,13 @@ public class Brotcrunsher {
 					break;
 					case "FachoberschulReife": Eignung = true;
 					break;
-					case "Abi": Eignung = true;
+					case "Abitur": Eignung = true;
 					break;
 					case "Studium": Eignung = true;
 					break;
+					case "Abi": Eignung = true;
+					break;
+					case "Student": Eignung = true;
 					default: Eignung = false;					
 			}
 			// eine switch case abfrage um zu ermitteln ober der Angegebene Schulabschluss für den Job geeignet ist oder nicht
@@ -91,7 +94,7 @@ public class Brotcrunsher {
 			} else {
 				Eig = "Ist nicht für den Job geeignet";
 			}
-			System.out.println(Vorname[z]+" "+Name[z]+ " "+Alter[z]+" "+erw+" "+Schulabschluss[z]+" "+Eig);
+			System.out.println(Vorname[z]+" "+Name[z]+ " "+Alter[z]+" "+erw+" |"+Schulabschluss[z]+"| "+Eig);
 		}
 				avg = sum / Anzahl_Datensaetze;		// durchschnittsalter Benutzer
 		System.out.println("");
