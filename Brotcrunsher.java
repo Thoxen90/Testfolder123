@@ -5,19 +5,21 @@ public class Brotcrunsher {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner s = new Scanner(System.in);
-		int Alter[] = new int[3];
-		String[] Name = new String[3];
-		String[] Vorname = new String[3];
-		int sum=0, avg = 0;
 		int Anzahl_Datensaetze;
 		
 		System.out.println("Guten Tag dies ist Ihr Assistent zum anlegen von neuen Benutzern");
-		System.out.println("Bitte legen Sie 3 Neue Benutzer an");
 		System.out.println("-------------------------------------------------------------------");
 		System.out.println("");
-		System.out.println("Wie viele Datensätze sollen angelegt werden?");
+		System.out.println("Wie viele Benutzer sollen angelegt werden?");
 		Anzahl_Datensaetze = s.nextInt();
 		System.out.println("");
+		
+		int Alter[] = new int[Anzahl_Datensaetze];
+		String[] Name = new String[Anzahl_Datensaetze];
+		String[] Vorname = new String[Anzahl_Datensaetze];
+		int sum=0, avg = 0;
+		String[] Schulabschluss = new String[Anzahl_Datensaetze];
+		boolean Eignung = false;
 		
 		for(int x=0;x<Anzahl_Datensaetze;x++) {
 			int z = x+1;				
@@ -32,7 +34,10 @@ public class Brotcrunsher {
 			System.out.println("Alter für "+z+". Benutzer");
 			Alter[x] = s.nextInt();
 			System.out.println("");
-		
+			
+			System.out.println("Schulabschluss von "+z+". Benutzer");
+			Schulabschluss[x] = s.next();
+			System.out.println("");
 			System.out.println(Vorname[x]+" "+Name[x]+" "+Alter[x]);
 			System.out.println("Eingabe erfolgreich");
 			System.out.println("");
@@ -43,15 +48,38 @@ public class Brotcrunsher {
 		System.out.println("-------------------------------------------------------------------");
 		
 		for(int z=0; z<Anzahl_Datensaetze; z++) {
+			String Eig = "Ist nicht geeignet";
 			String erw;
 			if(Alter[z]>=18) {
 				erw = "-volljährig-";
 				}else {
 				erw = "-minderjährig-";
 			}
-			System.out.println(Vorname[z]+" "+Name[z]+ " "+Alter[z]+" "+erw);
+			switch (Schulabschluss[z]) {
+					case "Mittlere Reife": Eignung = false;
+					break;
+					case "Fachhochschul Reife": Eignung = true;
+					break;
+					case "Hauptschulabschluss": Eignung = false;
+					break;
+					case "Fachabitur": Eignung = true;
+					break;
+					case "Fachgebundene Hochschulreife": Eignung = true;
+					break;
+					case "Fachoberschul Reife": Eignung = true;
+					break;
+					case "Abi": Eignung = true;
+					break;
+					default: Eignung = false;					
+			}
+			if(Eignung == true && erw == "-volljährig") {
+				Eig = "Ist für den Job geeignet";
+			} else {
+				Eig = "Ist nicht für den Job geeignet";
+			}
+			System.out.println(Vorname[z]+" "+Name[z]+ " "+Alter[z]+" "+erw+" "+Eig);
 		}
-				avg = sum / 3;		
+				avg = sum / Anzahl_Datensaetze;		
 		System.out.println("");
 		System.out.println("Durchschnittsalter: "+avg);
 		System.out.println("-------------------------------------------------------------------");
