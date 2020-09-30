@@ -1,14 +1,14 @@
-// Aufgabenstellung:-Lege mehrere Personen mit Vor-, Nachnamen und Altern an
-//					-Bestimme ob die genannten Personen Volljährig sind oder nicht
-//					-Füge eine Anrede (Herr oder Frau) hinzu
+// Aufgabenstellung:			-Lege mehrere Personen mit Vor-, Nachnamen und Altern an
+//					-Bestimme ob die genannten Personen VolljÃ¤hrig sind oder nicht
+//					-FÃ¼ge eine Anrede (Herr oder Frau) hinzu
 //					-Errechne den Altersdurchnitt der angelegten Personen
-//					-Gebe alle Datensätze und den Altersdurchnitt aus
+//					-Gebe alle DatensÃ¤tze und den Altersdurchnitt aus
 public class Test2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] Alter = new int[5];	//Initialisierung für ein Array für mehrere Alterswerte
-		String[][] Name = new String [5][2]; //Initialisierung eines Arrays mit 2 Spalten für Vor- und Nachname
+		int[] Alter = new int[5];	//Initialisierung fÃ¼r ein Array fÃ¼r mehrere Alterswerte
+		String[][] Name = new String [5][2]; //Initialisierung eines Arrays mit 2 Spalten fÃ¼r Vor- und Nachname
 		boolean Erwachsen = false;
 		int sum = 0 , average = 0;
 		int AnzahlDaten = 5;
@@ -27,7 +27,7 @@ public class Test2 {
 		Name[1][0] = "Klaus";
 		Name[1][1] = "Peters";
 		Name[2][0] = "Peter";
-		Name[2][1] = "Brößner";
+		Name[2][1] = "BrÃ¶ÃŸner";
 		Name[3][0] = "Karl";
 		Name[3][1] = "Kolnik";
 		Name[4][0] = "Gertrud";
@@ -60,18 +60,18 @@ public class Test2 {
 			}else {
 			Erwachsen = true;
 		}
-		//if Abfrage um zu ermitteln ob die entsprechende Person volljährig ist oder nicht
+		//if Abfrage um zu ermitteln ob die entsprechende Person volljÃ¤hrig ist oder nicht
 		
 		if(Erwachsen==true) {
 			System.out.println("Also bin ich erwachsen");
 			}else {
-			System.out.println("Also bin ich noch minderjährig");
+			System.out.println("Also bin ich noch minderjÃ¤hrig");
 		}
-		//Ausgabe Status Erwachsen oder nicht (eigentlich hätte ich dies auch in die obere if abfrage mit setzen können aber ich wollte der boolean irgendeinen Sinn geben)
+		//Ausgabe Status Erwachsen oder nicht (eigentlich hÃ¤tte ich dies auch in die obere if abfrage mit setzen kÃ¶nnen aber ich wollte der boolean irgendeinen Sinn geben)
 		
 		System.out.println();
 		sum = sum+Alter[i];
-		//erhöhe die Alterssumme um den aktuellen Alterswert
+		//erhÃ¶he die Alterssumme um den aktuellen Alterswert
 		
 		}
 		average = sum / AnzahlDaten;
