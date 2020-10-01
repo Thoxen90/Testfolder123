@@ -36,16 +36,18 @@ public class Benutzer {
 			System.out.println("Nachname für "+z+". Benutzer");
 			Name[x] = s.next();
 			// selbe für Nachname
+			
 			System.out.println("");
 			
 			System.out.println("Alter für "+z+". Benutzer");
 			Alter[x] = s.nextInt();
 			// Zahlen eingabe für Alter
-			System.out.println("");
 			
+			System.out.println("");
 			System.out.println("Schulabschluss von "+z+". Benutzer");
 			Schulabschluss[x] = s.next();
 			// String Eingabe Schulabschluss
+			
 			System.out.println("");
 			System.out.println(Vorname[x]+" "+Name[x]); //Ausgabe der eingegebenen Werte und bestätigung der Eingabe
 			System.out.println("Eingabe erfolgreich");
@@ -53,6 +55,8 @@ public class Benutzer {
 			
 			sum = sum+Alter[x]; //aktuelles alter wird zu summe addiert
 		}
+		s.close();
+		
 		System.out.println("Zusammenfassung Benuter:");
 		System.out.println("-------------------------------------------------------------------");
 		
@@ -86,7 +90,22 @@ public class Benutzer {
 					case "Abi": Eignung = true;
 					break;
 					case "Student": Eignung = true;
-					default: Eignung = false;					
+					break;
+					case "AllgemeineHochschulreife": Eignung = true;
+					break;
+					case "Mittlere-Reife": Eignung = false;
+					break;
+					case "Fachhochschul-Reife": Eignung = true;
+					break;
+					case "Hauptschul-Abschluss": Eignung = false;
+					break;
+					case "Fachgebundene-Hochschulreife": Eignung = true;
+					break;
+					case "Fachoberschul-Reife": Eignung = true;
+					break;
+					case "Allgemeine-Hochschulreife": Eignung = true;
+					break;
+					default: Eignung = false;
 			}
 			// eine switch case abfrage um zu ermitteln ober der Angegebene Schulabschluss für den Job geeignet ist oder nicht
 			if(Eignung == true && erw == "-volljährig-") {
