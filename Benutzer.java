@@ -31,6 +31,7 @@ public class Benutzer {
 			System.out.println("Vorname für "+z+". Benutzer");
 			Vorname[x] = s.next();
 			// die nächste String Eingabe wird im Aktuellen Vornamen gespeichert
+			
 			System.out.println("");
 			
 			System.out.println("Nachname für "+z+". Benutzer");
@@ -46,11 +47,14 @@ public class Benutzer {
 			System.out.println("");
 			System.out.println("Schulabschluss von "+z+". Benutzer");
 			Schulabschluss[x] = s.next();
+			
 			// String Eingabe Schulabschluss
 			
 			System.out.println("");
+			
 			System.out.println(Vorname[x]+" "+Name[x]); //Ausgabe der eingegebenen Werte und bestätigung der Eingabe
 			System.out.println("Eingabe erfolgreich");
+			
 			System.out.println("");
 			
 			sum = sum+Alter[x]; //aktuelles alter wird zu summe addiert
@@ -61,7 +65,7 @@ public class Benutzer {
 		System.out.println("-------------------------------------------------------------------");
 		
 		for(int z=0; z<Anzahl_Datensaetze; z++) {
-			String Eig = "Ist nicht geeignet";
+			String Eig;
 			String erw;
 			
 			if(Alter[z]>=18) {
