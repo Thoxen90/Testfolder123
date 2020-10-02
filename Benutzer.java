@@ -72,7 +72,7 @@ public class Benutzer {
 			
 			sum = sum+Alter[x]; //aktuelles alter wird zu summe addiert
 		}
-		s.close();
+		s.close();  //Scanner Methode wird wieder beendet um keine unnötigen Resourcen zu verschwenden
 		
 		System.out.println("Zusammenfassung Bewerber:");
 		System.out.println("-----------------------------------------------------------------------------------------------");
