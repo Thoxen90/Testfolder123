@@ -1,4 +1,4 @@
-/*	Aufgabenstellung: 	-schreibe ein Programm um eine beliebige Anzahl Berwerber anzulegen
+/*	Aufgabenstellung: 			-schreibe ein Programm um eine beliebige Anzahl Berwerber anzulegen
  * 						-überprüfe in der Eingabe Vor- und Nachname sowie Alter, Besitz eines Führerscheins und Schulabschluss
  * 						-Lass dein Programm überprüfen ob die angelegten Personen volljährig sind oder nicht
  * 						-stelle eine Eignung für den Job fest (Bedingung Bewerber volljährig, im Besitz eines Führerscheins und Schulabschluss Abitur oder besser)
