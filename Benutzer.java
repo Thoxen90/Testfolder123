@@ -26,26 +26,25 @@ public class Benutzer {
 		
 		for(int x=0;x<Anzahl_Datensaetze;x++) {
 			// eine for schleife um die einzelnen Einträge durchzugehen
-			int z = x+1;
-			// damit in der folgenden sys.out ausgabe die richtige Benutzer Nr. steht und ich nicht bei benutzer 0 anfange
-			System.out.println("Vorname für "+z+". Benutzer");
+			
+			System.out.println("Vorname für "+(x+1)+". Benutzer");
 			Vorname[x] = s.next();
 			// die nächste String Eingabe wird im Aktuellen Vornamen gespeichert
 			
 			System.out.println("");
 			
-			System.out.println("Nachname für "+z+". Benutzer");
+			System.out.println("Nachname für "+(x+1)+". Benutzer");
 			Name[x] = s.next();
 			// selbe für Nachname
 			
 			System.out.println("");
 			
-			System.out.println("Alter für "+z+". Benutzer");
+			System.out.println("Alter für "+(x+1)+". Benutzer");
 			Alter[x] = s.nextInt();
 			// Zahlen eingabe für Alter
 			
 			System.out.println("");
-			System.out.println("Schulabschluss von "+z+". Benutzer");
+			System.out.println("Schulabschluss von "+(x+1)+". Benutzer");
 			Schulabschluss[x] = s.next();
 			
 			// String Eingabe Schulabschluss
@@ -62,7 +61,7 @@ public class Benutzer {
 		s.close();
 		
 		System.out.println("Zusammenfassung Benuter:");
-		System.out.println("-------------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------------------------------------");
 		
 		for(int z=0; z<Anzahl_Datensaetze; z++) {
 			String Eig;
@@ -122,8 +121,6 @@ public class Benutzer {
 				avg = sum / Anzahl_Datensaetze;		// durchschnittsalter Benutzer
 		System.out.println("");
 		System.out.println("Durchschnittsalter: "+avg);
-		System.out.println("-------------------------------------------------------------------");
+		System.out.println("-----------------------------------------------------------------------------------------------");
 		}
 }
-
-
