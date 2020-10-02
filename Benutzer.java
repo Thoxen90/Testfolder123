@@ -4,16 +4,20 @@ public class Benutzer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		Scanner s = new Scanner(System.in);
 		//es wird eine Scanner Methode initialisiert um Benutzer Eingaben abzufragen
+		
 		int Anzahl_Datensaetze;
 		
-		System.out.println("Guten Tag dies ist Ihr Assistent zum anlegen von neuen Benutzern");
+		System.out.println("Guten Tag dies ist Ihr Assistent zum anlegen von neuen Bewerbern");
 		System.out.println("-------------------------------------------------------------------");
 		System.out.println("");
-		System.out.println("Wie viele Benutzer sollen angelegt werden?");
+		System.out.println("Wie viele Bewerber sollen angelegt werden?");
+		
 		Anzahl_Datensaetze = s.nextInt();
 		// die erste Zahleneingabe legt fest wie viele Benutzer das System anlegt
+		
 		System.out.println("");
 		
 		int Alter[] = new int[Anzahl_Datensaetze];
@@ -22,6 +26,7 @@ public class Benutzer {
 		int sum=0, avg = 0;
 		String[] Schulabschluss = new String[Anzahl_Datensaetze];
 		boolean Eignung = false;
+		String Eig[] = new String[Anzahl_Datensaetze];
 		//es werden mehrere Arrays und Variablen angelegt mit denen ich später arbeite
 		
 		for(int x=0;x<Anzahl_Datensaetze;x++) {
@@ -64,7 +69,6 @@ public class Benutzer {
 		System.out.println("-----------------------------------------------------------------------------------------------");
 		
 		for(int z=0; z<Anzahl_Datensaetze; z++) {
-			String Eig;
 			String erw;
 			
 			if(Alter[z]>=18) {
@@ -123,16 +127,31 @@ public class Benutzer {
 					default: Eignung = false;
 			}
 			// eine switch case abfrage um zu ermitteln ober der Angegebene Schulabschluss für den Job geeignet ist oder nicht
+			
 			if(Eignung == true && erw == "-volljährig-") {
-				Eig = "Ist für den Job geeignet";
-			} else {
-				Eig = "Ist nicht für den Job geeignet";
+				Eig[z] = "Ist für den Job geeignet";
+				} else {
+				Eig[z] = "Ist nicht für den Job geeignet";
 			}
-			System.out.println(Vorname[z]+" "+Name[z]+ " "+Alter[z]+" "+erw+" |"+Schulabschluss[z]+"| "+Eig);
+			
+			System.out.println(Vorname[z]+" "+Name[z]+ " "+Alter[z]+" "+erw+" |"+Schulabschluss[z]+"| "+Eig[z]);
 		}
-				avg = sum / Anzahl_Datensaetze;		// durchschnittsalter Benutzer
+		
+		avg = sum / Anzahl_Datensaetze;		// durchschnittsalter Benutzer
 		System.out.println("");
 		System.out.println("Durchschnittsalter: "+avg);
 		System.out.println("-----------------------------------------------------------------------------------------------");
+		System.out.println("");
+		System.out.println("Zusammenfassung geeigneter Bewerber");
+		System.out.println("-----------------------------------------------------------------------------------------------");
+		
+		for(int q=0;q<Anzahl_Datensaetze;q++) {
+			if(Eig[q]=="Ist für den Job geeignet") {
+				System.out.println(Vorname[q]+" "+Name[q]);
+			}
 		}
+		
+		System.out.println("-----------------------------------------------------------------------------------------------");
+		
+	}
 }
