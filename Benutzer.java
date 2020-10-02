@@ -34,7 +34,8 @@ public class Benutzer {
 		String[] Vorname = new String[Anzahl_Datensaetze];
 		int sum=0, avg = 0;
 		String[] Schulabschluss = new String[Anzahl_Datensaetze];
-		boolean Eignung = false;
+		String[] Führerschein = new String[Anzahl_Datensaetze];
+		boolean Eignung, Führers = false;
 		String Eig[] = new String[Anzahl_Datensaetze];
 		//es werden mehrere Arrays und Variablen angelegt mit denen ich später arbeite
 		
@@ -65,6 +66,10 @@ public class Benutzer {
 			// String Eingabe Schulabschluss
 			
 			System.out.println("");
+			System.out.println("Ist "+(x+1)+". Bewerber im Besitz eines Führerscheins (Ja/Nein)");
+			Führerschein[x] = s.next();
+			
+			System.out.println("");
 			System.out.println(Vorname[x]+" "+Nachname[x]); //Ausgabe der eingegebenen Werte und bestätigung der Eingabe
 			System.out.println("Eingabe erfolgreich");
 			System.out.println("-----------------------------------------------------------------------------------------");
@@ -72,7 +77,7 @@ public class Benutzer {
 			
 			sum = sum+Alter[x]; //aktuelles alter wird zu summe addiert
 		}
-		s.close();  //Scanner Methode wird wieder beendet um keine unnötigen Resourcen zu verschwenden
+		s.close();  //scanner methode wird wieder geschlossen um keine unnötigen Ressourcen zu verbrauchen
 		
 		System.out.println("Zusammenfassung Bewerber:");
 		System.out.println("-----------------------------------------------------------------------------------------------");
@@ -86,6 +91,15 @@ public class Benutzer {
 				erw = "-minderjährig-";
 			}
 			// eine if abfrage um zu ermitteln ob angelegte Benutzer volljährig ist oder nicht
+			
+			switch(Führerschein[z]) {
+			case "Ja": Führers = true;
+			break;
+			case "Nein": Führers = false;
+			break;
+			default: Führers = false;
+			}
+			// eine switch case Abfrage um den Besitz eines Führerscheins zu prüfen
 			switch (Schulabschluss[z]) {
 					case "MittlereReife": Eignung = false;
 					break;
@@ -137,13 +151,13 @@ public class Benutzer {
 			}
 			// eine switch case abfrage um zu ermitteln ober der Angegebene Schulabschluss für den Job geeignet ist oder nicht
 			
-			if(Eignung == true && erw == "-volljährig-") {
+			if(Eignung == true && erw == "-volljährig-" && Führers == true) {
 				Eig[z] = "Ist für den Job geeignet";
 				} else {
 				Eig[z] = "Ist nicht für den Job geeignet";
 			}
 			
-			System.out.println(Vorname[z]+" "+Nachname[z]+ " "+Alter[z]+" "+erw+" |"+Schulabschluss[z]+"| "+Eig[z]);
+			System.out.println(Vorname[z]+" "+Nachname[z]+ " "+Alter[z]+" "+erw+" |"+Schulabschluss[z]+"| Im Besitz eines Führerscheins: "+Führerschein[z]+" | "+Eig[z]);
 		}
 		
 		avg = sum / Anzahl_Datensaetze;		// Durchschnittsalter Benutzer
