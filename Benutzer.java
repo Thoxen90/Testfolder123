@@ -43,17 +43,17 @@ public class Benutzer {
 			Alter[x] = s.nextInt();
 			// Zahlen eingabe für Alter
 			
+			s.nextLine();  //sinnfreier Input um einen absatz zwischen s.nextInt(); und s.nextLine() zu schaffen da sonst der s.nextline() Befehl einfach übersprungen wurde
+			
 			System.out.println("");
 			System.out.println("Schulabschluss von "+(x+1)+". Benutzer");
-			Schulabschluss[x] = s.next();
-			
+			Schulabschluss[x] = s.nextLine();
 			// String Eingabe Schulabschluss
 			
 			System.out.println("");
-			
 			System.out.println(Vorname[x]+" "+Name[x]); //Ausgabe der eingegebenen Werte und bestätigung der Eingabe
 			System.out.println("Eingabe erfolgreich");
-			
+			System.out.println("-----------------------------------------------------------------------------------------");
 			System.out.println("");
 			
 			sum = sum+Alter[x]; //aktuelles alter wird zu summe addiert
@@ -107,6 +107,18 @@ public class Benutzer {
 					case "Fachoberschul-Reife": Eignung = true;
 					break;
 					case "Allgemeine-Hochschulreife": Eignung = true;
+					break;
+					case "Mittlere Reife": Eignung = false;
+					break;
+					case "Fachhochschul Reife": Eignung = true;
+					break;
+					case "Hauptschul Abschluss": Eignung = false;
+					break;
+					case "Fachgebundene Hochschulreife": Eignung = true;
+					break;
+					case "Fachoberschul Reife": Eignung = true;
+					break;
+					case "Allgemeine Hochschulreife": Eignung = true;
 					break;
 					default: Eignung = false;
 			}
