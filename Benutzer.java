@@ -1,7 +1,7 @@
 /*	Aufgabenstellung: 	-schreibe ein Programm um eine beliebige Anzahl Berwerber anzulegen
- * 						-überprüfe in der Eingabe Vor- und Nachname sowie Alter und Schulabschluss
+ * 						-überprüfe in der Eingabe Vor- und Nachname sowie Alter, Besitz eines Führerscheins und Schulabschluss
  * 						-Lass dein Programm überprüfen ob die angelegten Personen volljährig sind oder nicht
- * 						-stelle eine Eignung für den Job fest (Bedingung Bewerber volljährig und Schulabschluss Abitur oder besser)
+ * 						-stelle eine Eignung für den Job fest (Bedingung Bewerber volljährig, im Besitz eines Führerscheins und Schulabschluss Abitur oder besser)
  * 						-fasse alle angelegten Bewerber zusammen und errechne ein Durchschnittsalter
  *						-Liste alle geeigneten Bewerber auf 
  */
@@ -95,11 +95,20 @@ public class Benutzer {
 			switch(Führerschein[z]) {
 			case "Ja": Führers = true;
 			break;
+			case "J" : Führers = true;
+			break;
 			case "Nein": Führers = false;
+			break;
+			case "N" : Führers = false;
+			break;
+			case "+" : Führers = true;
+			break;
+			case "-" : Führers = false;
 			break;
 			default: Führers = false;
 			}
 			// eine switch case Abfrage um den Besitz eines Führerscheins zu prüfen
+			
 			switch (Schulabschluss[z]) {
 					case "MittlereReife": Eignung = false;
 					break;
