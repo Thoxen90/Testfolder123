@@ -1,3 +1,12 @@
+/*	Aufgabenstellung: 	-schreibe ein Programm um eine beliebige Anzahl Berwerber anzulegen
+ * 						-überprüfe in der Eingabe Vor- und Nachname sowie Alter und Schulabschluss
+ * 						-Lass dein Programm überprüfen ob die angelegten Personen volljährig sind oder nicht
+ * 						-stelle eine Eignung für den Job fest (Bedingung Bewerber volljährig und Schulabschluss Abitur oder besser)
+ * 						-fasse alle angelegten Bewerber zusammen und errechne ein Durchschnittsalter
+ *						-Liste alle geeigneten Bewerber auf 
+ */
+
+
 import java.util.Scanner;
 
 public class Benutzer {
@@ -137,7 +146,7 @@ public class Benutzer {
 			System.out.println(Vorname[z]+" "+Nachname[z]+ " "+Alter[z]+" "+erw+" |"+Schulabschluss[z]+"| "+Eig[z]);
 		}
 		
-		avg = sum / Anzahl_Datensaetze;		// durchschnittsalter Benutzer
+		avg = sum / Anzahl_Datensaetze;		// Durchschnittsalter Benutzer
 		
 		System.out.println("");
 		System.out.println("Durchschnittsalter: "+avg);
@@ -152,7 +161,7 @@ public class Benutzer {
 				System.out.println(Vorname[q]+" "+Nachname[q]);
 			}
 		}
-		
+		//alle geeignete Bewerber werden separat aufgelistet
 		System.out.println("-----------------------------------------------------------------------------------------------");
 		
 	}
