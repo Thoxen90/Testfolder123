@@ -12,13 +12,13 @@ public class Kniffler {
 		double Preis = 2.50, sum = 0;
 		String Kategorie = "", Griff = "";
 		
-		System.out.println("Bitte geben Sie die gewünschte Bestellmenge ein:");
+		System.out.println("Bitte geben Sie die gewÃ¼nschte Bestellmenge ein:");
 		Menge = s.nextInt();
 		
-		System.out.println("Bitte geben Sie die gewünschte Kategorie an (weich/mittel/hart)");
+		System.out.println("Bitte geben Sie die gewÃ¼nschte Kategorie an (weich/mittel/hart)");
 		Kategorie = s.next();
 		
-		System.out.println("Bitte geben Sie die gewünschte Griffart an (groß/normal/kinder)");
+		System.out.println("Bitte geben Sie die gewÃ¼nschte Griffart an (groÃŸ/normal/kinder)");
 		Griff = s.next();
 		
 		System.out.println("---------------------------------------------------------------------------------");
@@ -30,47 +30,48 @@ public class Kniffler {
 		
 		sum = Menge * Preis;
 		
-		System.out.println("Brutto Preis: "+sum+"€");
+		System.out.println("Brutto Preis: "+sum+"â‚¬");
 		
 		if(Menge >=500 && Menge <20000) {
-			System.out.println("Mengenrabatt 5%: "+(sum/100*5)+"€");
+			System.out.println("Mengenrabatt 5%: "+(sum/100*5)+"â‚¬");
 			sum = sum /100*95; 
 		}
 		if(Menge >= 20000) {
-			System.out.println("Mengenrabatt 10%: "+(sum/100*10)+"€");
+			System.out.println("Mengenrabatt 10%: "+(sum/100*10)+"â‚¬");
 			sum = sum /100*90;
 		}
 		
-		if(Griff.equals("kinder")) {
+		if(Griff.equals("kinder")||Griff.equals("Kinder")||Griff.equals("k")) {
 			switch (Kategorie) {
-			case "weich": System.out.println("Rabatt für Kinder+weich 5%: "+(sum/100*5)+"€"); sum = sum/100*95; 
+			case "weich","w","Weich": System.out.println("Rabatt fÃ¼r Kinder+weich 5%: "+(sum/100*5)+"â‚¬"); sum = sum/100*95; 
 			break;
-			case "mittel": System.out.println("Rabatt für Kinder+mittel 2%: "+(sum/100*2)+"€"); sum = sum/100*98; 
+			case "mittel","m","Mittel": System.out.println("Rabatt fÃ¼r Kinder+mittel 2%: "+(sum/100*2)+"â‚¬"); sum = sum/100*98; 
 			break;
-			case "hart": System.out.println("Rabatt für Kinder+hart 2%: "+(sum/100*2)+"€"); sum = sum/100*98; 
+			case "hart","h","Hart": System.out.println("Rabatt fÃ¼r Kinder+hart 2%: "+(sum/100*2)+"â‚¬"); sum = sum/100*98; 
 			break;
 			}
 		}
 		
-		if(Griff.equals("normal")) {
+		if(Griff.equals("normal")||Griff.equals("Normal")||Griff.equals("n")) {
 			switch (Kategorie) {
-			case "weiche": System.out.println("Rabatt für normal+weich 1%: "+(sum/100*1)); sum = sum/100*99; 
+			case "weich","Weich","w": System.out.println("Rabatt fÃ¼r normal+weich 1%: "+(sum/100*1)); sum = sum/100*99; 
 			break;
-			case "hart": System.out.println("Aufpreis für normal+hart 2,5%: "+(sum/100*2.5)); sum = sum/100*102.5; 
+			case "hart","h","Hart": System.out.println("Aufpreis fÃ¼r normal+hart 2,5%: "+(sum/100*2.5)); sum = sum/100*102.5; 
 			break;
 			}
 		}
 		
-		if(Griff.equals("groß")) {
+		if(Griff.equals("groÃŸ")||Griff.equals("GroÃŸ")||Griff.equals("g")) {
 			switch (Kategorie) {
-			case "weich": System.out.println("Rabatt für groß+weich 1%: "+(sum/100*1)); sum = sum/100*99; 
+			case "weich","w","Weich": System.out.println("Rabatt fÃ¼r groÃŸ+weich 1%: "+(sum/100*1)); sum = sum/100*99; 
 			break;
-			case "hart": System.out.println("Aufpreis für groß+hart 5%: "+(sum/100*5)); sum = sum/100*105; 
+			case "hart","h","Hart": System.out.println("Aufpreis fÃ¼r groÃŸ+hart 5%: "+(sum/100*5)); sum = sum/100*105; 
 			break;
 			}
 		}
+		System.out.println();
 		System.out.println("---------------------------------------------------------------------------------");
-		System.out.println("Preis nach Berechnung aller Rabatte: "+sum+"€");
+		System.out.println("Preis nach Berechnung aller Rabatte: "+sum+"â‚¬");
 		
 	}
 
