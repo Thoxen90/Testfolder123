@@ -8,7 +8,7 @@ public class Aufgabe3 {
 		Scanner s = new Scanner(System.in);
 		int Anzahl = 0;
 		
-		System.out.println("Bitte geben Sie die an wie viele Zahlen eingelesen werden sollen:");
+		System.out.println("Bitte geben Sie an wie viele Zahlen eingelesen werden sollen:");
 		Anzahl = s.nextInt();
 		System.out.println("");
 		
@@ -30,7 +30,7 @@ public class Aufgabe3 {
 				break;
 				case 4 : Ausgabe[x] = "Vier";
 				break;
-				case 5 : Ausgabe[x] = "Fünf";
+				case 5 : Ausgabe[x] = "FÃ¼nf";
 				break;
 				case 6 : Ausgabe[x] = "Sechs";
 				break;
