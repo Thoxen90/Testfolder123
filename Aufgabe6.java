@@ -1,5 +1,3 @@
-package Aufgabe6;
-
 import java.util.Scanner;
 
 public class Aufgabe6 {
@@ -34,7 +32,7 @@ public class Aufgabe6 {
 		System.out.println("--------------------------------------------------------");
 		System.out.println("Ergebnis:");
 		System.out.println("");
-		System.out.println("Jahreseinkommen: 	"+Einkommen+"€");
+		System.out.println("Jahreseinkommen: 	"+Einkommen+"â‚¬");
 		System.out.println("Anzahl der Kinder: 	"+AnzahlKinder);
 		
 		if(Einkommen<45000)
@@ -63,7 +61,7 @@ public class Aufgabe6 {
 			}
 				
 		
-		System.out.println("Ergebnis: 		"+KinderGeld+"€ Kindergeld");
+		System.out.println("Ergebnis: 		"+KinderGeld+"â‚¬ Kindergeld");
 		
 	}
 
