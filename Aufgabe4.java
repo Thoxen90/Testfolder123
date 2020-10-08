@@ -7,25 +7,46 @@ public class Aufgabe4 {
 
 		Scanner s = new Scanner(System.in);
 		double Preis = 0.28;
-		double Kilometer = 0;
+		int Kilometer = 0;
 		double Ergebnis = 0;
 		double Preisab20 = 0.25;
 		double Preisab50 = 0.20;
 		
-		System.out.println("Bitte geben Sie die gew�nschte Stecke in Kilometern an:");
-		Kilometer = s.nextDouble();
+		System.out.println("Bitte geben Sie die gewünschte Strecke in Kilometern an:");
+		Kilometer = s.nextInt();
 		
-		if(Kilometer<20) {
+		s.close();
+		
+		if(Kilometer<=20) {
 		Ergebnis = (Preis*Kilometer);
 		}
-		if(Kilometer>=20 && Kilometer<50) {
+		if(Kilometer>20 && Kilometer<=50) {
 			Ergebnis = (Preis*20+(Preisab20*(Kilometer-20)));
 		}
-		if(Kilometer>=50) {
-			Ergebnis = (Preis*20+(Preisab20*))
+		if(Kilometer>50) {
+			Ergebnis = (Preis*20+(Preisab20*30)+(Preisab50*(Kilometer-50)));
 		}
 		System.out.println("");
+		System.out.println("Fahrpreis für "+Kilometer+ " Kilometer: "+Ergebnis+"€");
 		
+		Ergebnis = 0; 
+		
+		//Alternativer Rechnungsweg
+		
+		  for(int x=1;x<=Kilometer;x++){
+		 Ergebnis = Ergebnis + Preis;
+		 switch(x){
+		 case 20: Preis = 0.25;
+		  break;
+		  case 50: Preis = 0.20;
+		  break;
+		  }
+		 }
+		
+		// Alternativer Rechnungsweg  
+		  
+		System.out.println("");
+		System.out.println("Fahrpreis für "+Kilometer+ " Kilometer: "+Ergebnis+"€");
 		
 		
 	}
