@@ -1,5 +1,3 @@
-package KnifflerAufgabe;
-
 import java.util.Scanner;
 
 public class Kniffler {
