@@ -31,19 +31,19 @@ public class Aufgabe4 {
 		
 		Ergebnis = 0; 
 		
-		//Alternativer Rechnungsweg
+		//Alternativer Rechnungsweg---------------------------------------
 		
-		  for(int x=1;x<=Kilometer;x++){
-		 Ergebnis = Ergebnis + Preis;
-		 switch(x){
-		 case 20: Preis = 0.25;
-		  break;
-		  case 50: Preis = 0.20;
-		  break;
+		  for(int x=1 ; x<=Kilometer ; x++){
+			  Ergebnis = Ergebnis + Preis;
+			  switch(x){
+			  	case 20: Preis = 0.25;
+			  	break;
+			  	case 50: Preis = 0.20;
+			  	break;
+			  }
 		  }
-		 }
 		
-		// Alternativer Rechnungsweg  
+		// Alternativer Rechnungsweg---------------------------------------  
 		  
 		System.out.println("");
 		System.out.println("Fahrpreis für "+Kilometer+ " Kilometer: "+Ergebnis+"€");
