@@ -26,9 +26,10 @@ public class Aufgabe4 {
 		if(Kilometer>50) {
 			Ergebnis = (Preis*20+(Preisab20*30)+(Preisab50*(Kilometer-50)));
 		}
+				
 		System.out.println("");
-		System.out.println("Fahrpreis für "+Kilometer+ " Kilometer: "+Ergebnis+"€");
-		
+		System.out.println("Fahrpreis für "+Kilometer+ " Kilometer: "+String.format("%1.2f €", Ergebnis));
+
 		Ergebnis = 0; 
 		
 		//Alternativer Rechnungsweg---------------------------------------
@@ -44,11 +45,13 @@ public class Aufgabe4 {
 		  }
 		
 		// Alternativer Rechnungsweg---------------------------------------  
-		  
+ 
 		System.out.println("");
-		System.out.println("Fahrpreis für "+Kilometer+ " Kilometer: "+Ergebnis+"€");
-		
-		
+		System.out.println("Fahrpreis für "+Kilometer+ " Kilometer: "+String.format("%1.2f €", Ergebnis));
+
+		}
 	}
 
-}
+
+
+
