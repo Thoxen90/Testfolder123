@@ -9,11 +9,11 @@ public class Aufgabe2 {
 		
 		double BMI;
 		double Gewicht;
-		double Größe;
+		double GrÃ¶ÃŸe;
 		int Kalorien = 0;
 		
-		System.out.println("Bitte geben Sie Ihre größe in Metern an:");
-		Größe = s.nextDouble();
+		System.out.println("Bitte geben Sie Ihre grÃ¶ÃŸe in Metern an:");
+		GrÃ¶ÃŸe = s.nextDouble();
 		System.out.println("");
 		
 		System.out.println("Bitte geben Sie Ihr Gewicht in kg an:");
@@ -21,7 +21,7 @@ public class Aufgabe2 {
 		
 		s.close();
 		
-		BMI = Gewicht/(Größe*Größe);
+		BMI = Gewicht/(GrÃ¶ÃŸe*GrÃ¶ÃŸe);
 		
 		if(BMI < 18.5) {
 			Kalorien = 3000;
@@ -40,7 +40,7 @@ public class Aufgabe2 {
 		}
 		
 		System.out.println("-------------------------------------------------------------------");
-		System.out.println("Ergebnis: BMI = "+BMI+"    Empfohlene Kalorien = "+Kalorien);
+		System.out.println("Ergebnis: BMI = "+String.format("%1.1f", BMI)+"    Empfohlene Kalorien = "+Kalorien);
 		
 	}
 
