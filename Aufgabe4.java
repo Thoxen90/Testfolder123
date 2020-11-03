@@ -7,13 +7,13 @@ public class Aufgabe4 {
 
 		Scanner s = new Scanner(System.in);
 		double Preis = 0.28;
-		int Kilometer = 0;
+		double Kilometer = 0;
 		double Ergebnis = 0;
 		double Preisab20 = 0.25;
 		double Preisab50 = 0.20;
 		
 		System.out.println("Bitte geben Sie die gewünschte Strecke in Kilometern an:");
-		Kilometer = s.nextInt();
+		Kilometer = s.nextDouble();
 		
 		s.close();
 		
@@ -34,16 +34,16 @@ public class Aufgabe4 {
 		
 		//Alternativer Rechnungsweg---------------------------------------
 		
-		  for(int x=1 ; x<=Kilometer ; x++){
+		  for(int x=1 ; x<=(Kilometer*100) ; x++){
 			  Ergebnis = Ergebnis + Preis;
 			  switch(x){
-			  	case 20: Preis = 0.25;
+			  	case 2000: Preis = 0.25;
 			  	break;
-			  	case 50: Preis = 0.20;
+			  	case 5000: Preis = 0.20;
 			  	break;
 			  }
 		  }
-		
+		Ergebnis = Ergebnis / 100;
 		// Alternativer Rechnungsweg---------------------------------------  
  
 		System.out.println("");
