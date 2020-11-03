@@ -17,13 +17,13 @@ public class Aufgabe6 {
 		Einkommen = s.nextInt();
 		
 		while(AnzahlKinder<0) {
-		System.out.println("");
-		System.out.println("Bitte geben Sie die Anzahl Ihrer Kinder an:");
-		AnzahlKinder = s.nextInt();
-		if(AnzahlKinder <0) {
-			System.out.println("Man kann nicht weniger als 0 Kinder haben");
 			System.out.println("");
-		}
+			System.out.println("Bitte geben Sie die Anzahl Ihrer Kinder an:");
+			AnzahlKinder = s.nextInt();
+			if(AnzahlKinder <0) {
+				System.out.println("Man kann nicht weniger als 0 Kinder haben");
+				System.out.println("");
+			}
 		}
 		
 		s.close();
@@ -37,27 +37,27 @@ public class Aufgabe6 {
 		
 		if(Einkommen<45000)
 			switch (AnzahlKinder) {
-			case 0: KinderGeld = 0;
-			break;
-			case 1: KinderGeld = 70;
-			break;
-			case 2: KinderGeld = (70+130);
-			break;
-			case 3: KinderGeld = (70+130+220);
-			break;
-			default: KinderGeld = (70+130+220+(240*(AnzahlKinder-3)));
+				case 0: KinderGeld = 0;
+				break;
+				case 1: KinderGeld = 70;
+				break;
+				case 2: KinderGeld = (70+130);
+				break;
+				case 3: KinderGeld = (70+130+220);
+				break;
+				default: KinderGeld = (70+130+220+(240*(AnzahlKinder-3)));
 			}
 		if(Einkommen>=45000)
 			switch (AnzahlKinder) {
-			case 0: KinderGeld = 0;
-			break;
-			case 1: KinderGeld = 70;
-			break;
-			case 2: KinderGeld = (70+70);
-			break;
-			case 3: KinderGeld = (70+70+140);
-			break;
-			default: KinderGeld = (70+70+140+(140*(AnzahlKinder-3)));
+				case 0: KinderGeld = 0;
+				break;
+				case 1: KinderGeld = 70;
+				break;
+				case 2: KinderGeld = (70+70);
+				break;
+				case 3: KinderGeld = (70+70+140);
+				break;
+				default: KinderGeld = (70+70+140+(140*(AnzahlKinder-3)));
 			}
 				
 		
