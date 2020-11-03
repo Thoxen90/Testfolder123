@@ -12,7 +12,7 @@ public class Aufgabe1 {
 		double Versandkosten = 5.50;
 		double Rechnungsbetrag;
 		
-		System.out.println("Bitte geben Sie die gewünschte Menge ein:");
+		System.out.println("Bitte geben Sie die gewÃ¼nschte Menge ein:");
 		Menge = s.nextInt();
 		System.out.println("");
 		
@@ -26,17 +26,17 @@ public class Aufgabe1 {
 		
 		if(Bestellwert<100) {
 			Versandkosten = 5.50;
-		}
+		}else
 		if(Bestellwert>=100 && Bestellwert<200) {
 			Versandkosten = 3.00;
-		}
+		}else
 		if(Bestellwert>=200) {
 			Versandkosten = 0;
 		}
 		
 		Rechnungsbetrag = Bestellwert+Versandkosten;
 		
-		System.out.println("Bestellwert: "+Bestellwert+"€    Versandkosten: "+Versandkosten+"€    Rechnunsbetrag: "+Rechnungsbetrag+"€");
+		System.out.println("Bestellwert: "+Bestellwert+"â‚¬    Versandkosten: "+Versandkosten+"â‚¬    Rechnunsbetrag: "+Rechnungsbetrag+"â‚¬");
 	}
 
 }
