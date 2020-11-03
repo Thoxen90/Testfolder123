@@ -25,16 +25,16 @@ public class Aufgabe2 {
 		
 		if(BMI < 18.5) {
 			Kalorien = 3000;
-		}
+		}else
 		if(BMI>=18.5 && BMI <25) {
 			Kalorien = 2000;
-		}
+		}else
 		if(BMI>=25 && BMI <30) {
 			Kalorien = 1800;
-		}
+		}else
 		if(BMI>=30 && BMI <40) {
 			Kalorien = 1200;
-		}
+		}else
 		if(BMI>=40) {
 			Kalorien = 700;
 		}
