@@ -7,9 +7,9 @@ public class Animals {
 
 		Scanner s = new Scanner(System.in);
 		String Eingabe = "";
-		boolean EingabeprÃ¼fung = false;
+		boolean Eingabeprüfung = false;
 		
-		while(EingabeprÃ¼fung == false) {
+		while(Eingabeprüfung == false) {
 		System.out.println("Bitte gib den Text Kuh | Hund | Katze ein:");
 		Eingabe = s.next();
 		
