@@ -10,7 +10,7 @@ public class KFZ {
 		BMW.setSitze(5);
 		BMW.setPersonen(3);
 		BMW.setTank(70);
-		BMW.setFüllstand(40);
+		BMW.setFÃ¼llstand(40);
 		BMW.setMaxSpeed(230);
 		BMW.setAktSpeed(125);
 		BMW.ausgabe();
@@ -24,12 +24,12 @@ public class KFZ {
 		
 				
 		KFZ Audi = new KFZ();
-		Audi.setMarke("Audi");
+		Audi.setMarke("Audi345");
 		Audi.setName("A4");
 		Audi.setSitze(5);
 		Audi.setPersonen(4);
 		Audi.setTank(60);
-		Audi.setFüllstand(30);
+		Audi.setFÃ¼llstand(30);
 		Audi.setMaxSpeed(210);
 		Audi.setAktSpeed(150);
 		Audi.ausgabe();
@@ -48,14 +48,19 @@ public class KFZ {
 	}
 
 	String Name,Marke;
-	int Sitze,Tank,MaxSpeed,Füllstand,Personen,AktSpeed;
+	int Sitze,Tank,MaxSpeed,FÃ¼llstand,Personen,AktSpeed;
 	
 	public String getMarke() {
 		return Marke;
 	}
 	
 	public void setMarke(String Marke) {
-		this.Marke=Marke;
+		String erlaubt = this.entferneSonderzeichen(Marke);
+		if (erlaubt.length() > 1)
+			this.Marke = erlaubt;
+		else {
+			System.out.println("Name ist zu kurz!");
+		}
 	}
 	
 	public String getName() {
@@ -107,15 +112,15 @@ public class KFZ {
 			System.out.println("Fehler! Ein Auto durchbricht nicht die Schallgrenze");
 			this.MaxSpeed=1000;
 		}else if(MaxSpeed<0) {
-			System.out.println("Fehler! Ein Auto fährt nicht langsamer als 0 km/h");
+			System.out.println("Fehler! Ein Auto fÃ¤hrt nicht langsamer als 0 km/h");
 			this.MaxSpeed = 0;
 		}else {
 		this.MaxSpeed=MaxSpeed;
 		}
 	}
 	
-	public int getFüllstand() {
-		return Füllstand;
+	public int getFÃ¼llstand() {
+		return FÃ¼llstand;
 	}
 	
 	public int getPersonen() {
@@ -133,21 +138,21 @@ public class KFZ {
 		}
 	}
 	
-	public void setFüllstand(int Füllstand) {
-		if(getFüllstand()>getTank()) {
-			System.out.println("Fehler! Füllstand übersteigt Tankgröße");
-			this.Füllstand=Tank;
-		}else if(getFüllstand()<0) {
-			System.out.println("Fehler! Füllstand liegt unter 0");
-			this.Füllstand=0;
+	public void setFÃ¼llstand(int FÃ¼llstand) {
+		if(getFÃ¼llstand()>getTank()) {
+			System.out.println("Fehler! FÃ¼llstand Ã¼bersteigt TankgrÃ¶ÃŸe");
+			this.FÃ¼llstand=Tank;
+		}else if(getFÃ¼llstand()<0) {
+			System.out.println("Fehler! FÃ¼llstand liegt unter 0");
+			this.FÃ¼llstand=0;
 		}else {
-		this.Füllstand = Füllstand;
+		this.FÃ¼llstand = FÃ¼llstand;
 		}
 	}
 	
 	public void tanken() {
-		this.Füllstand=Tank;
-		System.out.println("Voll getankt! Neuer Füllstand: "+this.Tank+" Liter");
+		this.FÃ¼llstand=Tank;
+		System.out.println("Voll getankt! Neuer FÃ¼llstand: "+this.Tank+" Liter");
 		System.out.println();
 	}
 	
@@ -182,7 +187,7 @@ public class KFZ {
 		this.AktSpeed = AktSpeed+10;
 		System.out.println("Beschleunige! Neue Geschwindigkeit: "+this.AktSpeed+" km/h");
 		}else {
-			System.out.println("Fehler! Geschwindigkeit übersteigt Maximal Geschwindigkeit");
+			System.out.println("Fehler! Geschwindigkeit Ã¼bersteigt Maximal Geschwindigkeit");
 		}
 	}
 	
@@ -212,7 +217,7 @@ public class KFZ {
 	
 	public void losfahren() {
 		if(AktSpeed>0) {
-			System.out.println("Auto fährt schon");
+			System.out.println("Auto fÃ¤hrt schon");
 		}else {
 			System.out.println("Fahre los!");
 		this.AktSpeed = AktSpeed +1;
@@ -225,8 +230,28 @@ public class KFZ {
 		System.out.println("	 ---------------------------------------------------------------");
 		System.out.println("	|	Marke: "+this.Marke+" Variante: "+this.Name+" Sitze: "+this.Sitze+" Personen: "+this.Personen+" 		|");
 		System.out.println("	|	MaxGeschwindigkeit: "+this.MaxSpeed+" AktGeschwindigkeit "+this.AktSpeed+" 		|");
-		System.out.println(" 	|	Tankgröße: "+this.Tank+" Liter  Aktueller Füllstand: "+this.Füllstand+" Liter	|");
+		System.out.println(" 	|	TankgrÃ¶ÃŸe: "+this.Tank+" Liter  Aktueller FÃ¼llstand: "+this.FÃ¼llstand+" Liter	|");
 		System.out.println("	 ---------------------------------------------------------------");
 		System.out.println();
+	}
+	private String entferneSonderzeichen(String text) {
+
+		String erlaubt = "";
+
+		for (int i = 0, j = 0; i < text.length(); i++)
+			if (text.charAt(i) >= 'a' && text.charAt(i) <= 'z') {
+				if (j == 0)
+					erlaubt += (char) (text.charAt(i) + ('A' - 'a'));//Abstand zwischen A und a als int
+				else
+					erlaubt += text.charAt(i);
+				j++;
+			} else if (text.charAt(i) >= 'A' && text.charAt(i) <= 'Z') {
+				if (j > 0)
+					erlaubt += (char) (text.charAt(i) - ('A' - 'a'));//Abstand zwischen A und a als int
+				else
+					erlaubt += text.charAt(i);
+				j++;
+			}
+		return erlaubt;
 	}
 }
